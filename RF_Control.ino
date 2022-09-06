@@ -13,7 +13,7 @@
 #define HEATER_DN  3746562696
 #define HEATER_UP  3746564336
 
-#define DEBUG_STATE 1
+//#define DEBUG_STATE 1
 
 #define K_STATE_IDLE 0
 #define K_STATE_FRST 1
@@ -135,5 +135,6 @@ void setup_RF_control(int core, bool watchdog){
     &Receiver,
     0);
   now=millis();
+  Serial.println("....started RF_Control Task");
   if(watchdog) esp_task_wdt_add(Receiver);
 }
